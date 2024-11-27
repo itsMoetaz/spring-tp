@@ -26,12 +26,12 @@ public class EquipeServiceImp implements IEquipeService{
     }
 
     @Override
-    public Equipe getEquipeById(int id) {
+    public Equipe getEquipeById(Long id) {
         return equipeRepository.findById(id).orElse(null);
     }
 
     @Override
-    public void deleteEquipeById(int id) {
+    public void deleteEquipeById(Long id) {
         equipeRepository.deleteById(id);
     }
 

@@ -35,13 +35,13 @@ public class EquipeRestController {
 
     @GetMapping("/getEquipeById/{id}")
     @Operation(description = "récupérer équipe par ID de la base de données")
-    public Equipe getEquipeById(@PathVariable int id) {
+    public Equipe getEquipeById(@PathVariable Long id) {
         return iEquipeService.getEquipeById(id);
     }
 
     @DeleteMapping("/deleteEquipeById/{id}")
     @Operation(description = "supprimer équipe par ID de la base de données")
-    public void deleteEquipeById(@PathVariable int id) {
+    public void deleteEquipeById(@PathVariable Long id) {
         iEquipeService.deleteEquipeById(id);
     }
 

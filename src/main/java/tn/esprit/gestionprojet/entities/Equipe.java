@@ -16,7 +16,7 @@ import java.util.Set;
 public class Equipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String nom;
     @Enumerated(EnumType.STRING)
     private Domaine domaine;

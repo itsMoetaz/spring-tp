@@ -35,13 +35,13 @@ public class ProjetRestController {
 
     @GetMapping("/getProjetById/{id}")
     @Operation(description = "récupérer projet par ID de la base de données")
-    public Projet getProjetById(@PathVariable String id) {
+    public Projet getProjetById(@PathVariable Long id) {
         return iProjetService.getProjetById(id);
     }
 
     @DeleteMapping("/deleteProjetById/{id}")
     @Operation(description = "supprimer projet par ID de la base de données")
-    public void deleteProjetById(@PathVariable String id) {
+    public void deleteProjetById(@PathVariable Long id) {
         iProjetService.deleteProjetById(id);
     }
 }

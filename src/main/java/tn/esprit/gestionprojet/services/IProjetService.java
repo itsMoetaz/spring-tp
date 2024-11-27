@@ -8,6 +8,6 @@ public interface IProjetService {
     public Projet addProjet(Projet projet);
     public Projet updateProjet(Projet projet);
     public List<Projet> getAllProjets();
-    public Projet getProjetById(String id);
-    public void deleteProjetById(String id);
+    public Projet getProjetById(Long id);
+    public void deleteProjetById(Long id);
 }

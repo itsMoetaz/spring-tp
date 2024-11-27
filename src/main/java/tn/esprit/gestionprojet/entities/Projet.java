@@ -15,7 +15,7 @@ import java.util.Set;
 @ToString
 public class Projet {
     @Id
-    private String id;
+    private Long id;
     private String sujet;
     @OneToOne
     private ProjetDetail projetDetail;

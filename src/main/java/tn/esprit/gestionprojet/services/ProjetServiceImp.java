@@ -26,12 +26,12 @@ public class ProjetServiceImp implements IProjetService{
     }
 
     @Override
-    public Projet getProjetById(String id) {
+    public Projet getProjetById(Long id) {
         return projetRepository.findById(id).orElse(null);
     }
 
     @Override
-    public void deleteProjetById(String id) {
+    public void deleteProjetById(Long id) {
         projetRepository.deleteById(id);
     }
 }
