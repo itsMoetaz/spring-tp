@@ -1,10 +1,8 @@
 package tn.esprit.gestionprojet.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Set;
 
@@ -12,13 +10,17 @@ import java.util.Set;
 @Getter //generer les getters
 @Setter //generer les setters
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
 public class Projet {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String sujet;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ProjetDetail projetDetail;
-    @ManyToMany(mappedBy = "projets")
+    @ManyToMany(mappedBy = "projets" , fetch = FetchType.EAGER)
+    @ToString.Exclude
+    @JsonIgnore
     private Set<Equipe> equipes;
 }

@@ -2,10 +2,7 @@ package tn.esprit.gestionprojet.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Date;
 
@@ -13,6 +10,7 @@ import java.util.Date;
 @Getter //generer les getters
 @Setter //generer les setters
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
 public class ProjetDetail {
     @Id
@@ -24,6 +22,7 @@ public class ProjetDetail {
     @Temporal(TemporalType.DATE)
     private Date dateDebut;
     @OneToOne(mappedBy = "projetDetail")
+    @ToString.Exclude
     @JsonIgnore
     private Projet projet;
 
