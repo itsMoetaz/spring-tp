@@ -44,4 +44,25 @@ public class ProjetRestController {
     public void deleteProjetById(@PathVariable Long id) {
         iProjetService.deleteProjetById(id);
     }
+
+    @PutMapping("/affecter-projet-a-projet-details/{projet-id}/{projet-details-id}")
+    @Operation(description = "affecter projet par ID ")
+    public void affecgterProjetAProjetDetail(@PathVariable("projet-id") Long proejtId, @PathVariable("projet-details-id") Long proejtDetailsId) {
+        iProjetService.assignProjetDetailToProjet(proejtId, proejtDetailsId);
+    }
+
+    @PostMapping("/ajouter-projet-affecter-un-projetDetail/{projet-details-id}")
+    @Operation(description = "Ajouter un Projet et affecter un Projet Detail à ce projet")
+    public void creerProjetEtAffecterProjetDetail(@RequestBody Projet projet, @PathVariable("projet-details-id") Long projetDetailsId) {
+        iProjetService.addProjetAndAssignProjetToProjetDetail(projet, projetDetailsId);
+    }
+
+    @PutMapping("/desaffecter-projet-a-projet-details/{projetId}")
+    @Operation(description = "desaffecter projetDetail d'un projet par ID ")
+    public Projet desaffecterProjetAProjetDetail(@PathVariable Long projetId) {
+        return iProjetService.DesaffecterProjetDetailFromProjet(projetId);
+    }
+
+
+
 }

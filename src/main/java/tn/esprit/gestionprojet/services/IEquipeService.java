@@ -10,4 +10,5 @@ public interface IEquipeService {
     public List<Equipe> getAllEquipes();
     public Equipe getEquipeById(Long id);
     public void deleteEquipeById(Long id);
-}
+    public void assignProjetToEquipe(Long projetId, Long equipeId);
+    public void desaffecterProjetFromEquipe(Long projetId, Long equipeId) ;}

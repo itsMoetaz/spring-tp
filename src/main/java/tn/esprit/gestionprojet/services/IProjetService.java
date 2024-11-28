@@ -10,4 +10,7 @@ public interface IProjetService {
     public List<Projet> getAllProjets();
     public Projet getProjetById(Long id);
     public void deleteProjetById(Long id);
-}
+    public void assignProjetDetailToProjet(Long projetId, Long projetDetailId);
+    public void addProjetAndAssignProjetToProjetDetail(Projet projet, Long projetDetailId);
+    public Projet DesaffecterProjetDetailFromProjet(Long projetId) ;
+       }

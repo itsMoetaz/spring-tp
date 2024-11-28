@@ -45,5 +45,15 @@ public class EquipeRestController {
         iEquipeService.deleteEquipeById(id);
     }
 
+    @PutMapping("/affecter-equipe-a-projet/{equipeId}/{projetId}")
+    @Operation(description = "affecter projet par ID ")
+    public void affecgterEquipeAProjet(@PathVariable("equipeId") Long equipeId, @PathVariable("projetId") Long projetId) {
+        iEquipeService.assignProjetToEquipe(equipeId, projetId);
+    }
 
+    @PutMapping("/desaffecter-projet-d'equipe/{equipeId}/{projetId}")
+    @Operation(description = "desaffecter projet from equipe ")
+    public void desaffecgterProjetFromEquipe(@PathVariable("equipeId") Long equipeId, @PathVariable("projetId") Long projetId) {
+        iEquipeService.desaffecterProjetFromEquipe(equipeId, projetId);
+    }
 }
